@@ -48,20 +48,20 @@ public class BomberMan {
         return result;
     }
 
-    private static boolean checkBomb(List<String> grid,int i,int j) {
-        if (i - 1 >= 0 && grid.get(i - 1).charAt(j) == 'O') {
+    private static boolean checkBomb(List<String> grid,int x,int y) {
+        if (x - 1 >= 0 && grid.get(x - 1).charAt(y) == 'O') {
             return true;
         }
 
-        if (i + 1 < grid.size() && grid.get(i + 1).charAt(j) == 'O') {
+        if (x + 1 < grid.size() && grid.get(x + 1).charAt(y) == 'O') {
             return true;
         }
-        if (j - 1 >= 0 && grid.get(i).charAt(j - 1) == 'O') {
+        if (y - 1 >= 0 && grid.get(x).charAt(y - 1) == 'O') {
             return true;
         }
 
         int len = grid.get(0).length();
-        if (j + 1 < len && grid.get(i).charAt(j + 1) == 'O') {
+        if (y + 1 < len && grid.get(x).charAt(y + 1) == 'O') {
             return true;
         }
 
